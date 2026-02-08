@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Six Monthsary ♡</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,700&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg-glow"></div>
+
+  <main class="container py-5">
+    <!-- Top Nav (hidden on home, shown on pages) -->
+    <nav id="topNav" class="d-none align-items-center justify-content-between mb-4">
+    <button class="btn btn-soft" id="homeBtn" type="button">← Home</button>
+    <div class="page-title" id="pageTitle"></div>
+    <div style="width:92px;"></div>
+    </nav>
+
+
+    <!-- HOME (Scorecards) -->
+    <section id="homeView">
+      <header class="text-center mb-4">
+        <div class="mini-hearts" aria-hidden="true"></div>
+        <h1 class="brand-title">Happy 6 Months, My Love <span class="tiny-heart">♡</span></h1>
+        <p class="brand-subtitle mb-0">Half a year of love</p>
+      </header>
+
+      <div class="row g-4 justify-content-center mt-2">
+        <div class="col-12 col-md-6 col-lg-5">
+          <button class="card scorecard h-100 text-start w-100" data-go="letter" type="button">
+            <div class="card-body p-4">
+              <div class="score-badge">01</div>
+              <h2 class="score-title">Letter</h2>
+              <p class="score-desc mb-0">A sweet note, from me to you.</p>
+            </div>
+          </button>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-5">
+          <button class="card scorecard h-100 text-start w-100" data-go="snapshots" type="button">
+            <div class="card-body p-4">
+              <div class="score-badge">02</div>
+              <h2 class="score-title">This Month’s Snapshots</h2>
+              <p class="score-desc mb-0">Polaroids of our favorite moments.</p>
+            </div>
+          </button>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-5">
+          <button class="card scorecard h-100 text-start w-100" data-go="reminders" type="button">
+            <div class="card-body p-4">
+              <div class="score-badge">03</div>
+              <h2 class="score-title">Daily Reminders</h2>
+              <p class="score-desc mb-0">Tiny notes for big love.</p>
+            </div>
+          </button>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-5">
+          <button class="card scorecard h-100 text-start w-100" data-go="locked" type="button">
+            <div class="card-body p-4">
+              <div class="score-badge">04</div>
+              <h2 class="score-title">Locked Surprise</h2>
+              <p class="score-desc mb-0">A hidden treat… if you can unlock it ♡</p>
+            </div>
+          </button>
+        </div>
+      </div>
+
+      <footer class="text-center mt-5 small text-muted">
+        Made with warm pixels and gentle hearts ♡
+      </footer>
+    </section>
+
+    <!-- LETTER VIEW -->
+    <section id="letterView" class="d-none">
+      <div class="love-paper mx-auto">
+        <div class="love-paper-top">
+          <div class="mini-hearts mini-hearts--paper" aria-hidden="true"></div>
+          <h1 class="love-paper-heading">To my favorite person,</h1>
+          <p class="love-paper-sub">Happy sixth monthsary ♡</p>
+        </div>
+        <div class="love-paper-body">
+          <!-- EDIT THIS LETTER -->
+          <p>
+            Six months with you feels like a soft song in the background of my days—
+            the kind that makes everything warmer, gentler, and brighter.
+          </p>
+          <p>
+            Thank you for the little things: the patience, the laughter, the comfort,
+            and the way you make “ordinary” feel special.
+          </p>
+          <p>
+            I’m proud of us. I’m proud of you. And I’m excited for every month after this—
+            the quiet days, the busy days, and everything in between.
+          </p>
+          <p class="mb-0">
+            Always yours,<br>
+            <span class="signature">— Your Love ♡</span>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SNAPSHOTS VIEW -->
+    <section id="snapshotsView" class="d-none">
+      <p class="text-center text-muted mb-4">
+        Click a polaroid to enlarge it (just a little).
+      </p>
+
+      <div class="row g-4">
+        <!-- Replace these images in /assets/photos/ -->
+        <div class="col-12 col-sm-6 col-lg-4">
+          <button class="polaroid" data-img="assets/1.jpg" type="button">
+            <img src="assets/1.jpg" alt="Snapshot 1" loading="lazy">
+          </button>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-4">
+          <button class="polaroid polaroid--tilt" data-img="assets/2.jpg" type="button">
+            <img src="assets/2.jpg" alt="Snapshot 2" loading="lazy">
+          </button>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-4">
+          <button class="polaroid" data-img="assets/3.jpg" type="button">
+            <img src="assets/3.jpg" alt="Snapshot 3" loading="lazy">
+          </button>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-4">
+          <button class="polaroid polaroid--tilt2" data-img="assets/4.jpg" type="button">
+            <img src="assets/4.jpg" alt="Snapshot 4" loading="lazy">
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- REMINDERS VIEW -->
+    <section id="remindersView" class="d-none">
+      <p class="text-center text-muted mb-4">
+        Cute little sticky notes—edit these to your favorites.
+      </p>
+
+      <div class="sticky-grid">
+        <article class="sticky">
+          <div class="sticky-tape" aria-hidden="true"></div>
+          <h3 class="sticky-title">Hydrate</h3>
+          <p class="sticky-text">Drink water, baby ♡</p>
+        </article>
+
+        <article class="sticky sticky--rose">
+          <div class="sticky-tape" aria-hidden="true"></div>
+          <h3 class="sticky-title">Eat</h3>
+          <p class="sticky-text">Even if it’s small—please eat.</p>
+        </article>
+
+        <article class="sticky sticky--mint">
+          <div class="sticky-tape" aria-hidden="true"></div>
+          <h3 class="sticky-title">Rest</h3>
+          <p class="sticky-text">You don’t have to do everything today.</p>
+        </article>
+
+        <article class="sticky">
+          <div class="sticky-tape" aria-hidden="true"></div>
+          <h3 class="sticky-title">I’m proud of you</h3>
+          <p class="sticky-text">Always. Even on the quiet days.</p>
+        </article>
+
+        <article class="sticky sticky--mint">
+          <div class="sticky-tape" aria-hidden="true"></div>
+          <h3 class="sticky-title">Breathe</h3>
+          <p class="sticky-text">In… out… you’ve got this.</p>
+        </article>
+
+        <article class="sticky sticky--rose">
+          <div class="sticky-tape" aria-hidden="true"></div>
+          <h3 class="sticky-title">Message me</h3>
+          <p class="sticky-text">When you miss me, okay? ♡</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- LOCKED VIEW -->
+    <section id="lockedView" class="d-none">
+      <div class="lock-card mx-auto">
+        <div class="lock-top text-center">
+          <div class="lock-icon" aria-hidden="true">🔒</div>
+          <h1 class="lock-title mb-2">A little secret is waiting…</h1>
+          <p class="text-muted mb-0">Unlock with a password <em>or</em> by tapping the heart 1000 times.</p>
+        </div>
+
+        <div class="lock-body">
+          <div class="row g-3 align-items-end">
+            <div class="col-12 col-md-8">
+              <label class="form-label">Password</label>
+              <input id="pwInput" class="form-control form-control-soft" type="password" placeholder="Type it here…">
+              <div class="form-text">Tip: I changed this one, I'll show it in person na lang.</div>
+            </div>
+            <div class="col-12 col-md-4 d-grid">
+              <button id="pwBtn" class="btn btn-soft" type="button">Unlock</button>
+            </div>
+          </div>
+
+          <hr class="soft-hr my-4">
+
+          <div class="text-center">
+            <button id="tapHeartBtn" class="tap-heart" type="button" aria-label="Tap heart to unlock">
+              <span class="tap-heart-inner">♡</span>
+            </button>
+            <div class="mt-2 text-muted">
+              Taps: <span id="tapCount">0</span>/1000
+            </div>
+          </div>
+
+          <div id="unlockMsg" class="unlock-msg" role="status" aria-live="polite"></div>
+        </div>
+      </div>
+
+      <!-- Hidden content -->
+      <section id="secretArea" class="secret-area mx-auto d-none">
+        <div class="secret-badge">Unlocked ♡</div>
+        <h2 class="secret-title">For you, always.</h2>
+        <p class="text-muted">
+          Put your special audio in <code>assets/surprise/secret.mp3</code>, then play it here.
+        </p>
+
+        <audio class="w-100" controls preload="none">
+          <source src="assets/surprise/secret.mp3" type="audio/mpeg">
+          Your browser doesn’t support audio playback.
+        </audio>
+      </section>
+    </section>
+  </main>
+
+  <!-- Modal for polaroids -->
+  <div class="modal fade" id="photoModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content modal-soft">
+        <div class="modal-body">
+          <button type="button" class="btn-close float-end" data-bs-dismiss="modal" aria-label="Close"></button>
+          <img id="modalImg" class="modal-img" src="" alt="Enlarged snapshot">
+          <div id="modalCaption" class="modal-caption"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

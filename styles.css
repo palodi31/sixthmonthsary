@@ -1,0 +1,355 @@
+:root{
+  --bg1:#fff7f2;
+  --bg2:#fffdfb;
+  --ink:#2b2b2b;
+  --muted:#6f6a67;
+  --card:#ffffffcc;
+  --stroke:#f1d7d0;
+  --shadow: 0 10px 30px rgba(20, 10, 5, 0.08);
+  --shadow2: 0 14px 40px rgba(20, 10, 5, 0.10);
+  --radius: 22px;
+  --accent:#ff7aa8;
+  --accent2:#ffb7c9;
+  --mint:#bfeadf;
+  --rose:#ffd0db;
+  --paper:#fff9f6;
+  --tape:#ffffffb3;
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+
+body{
+  font-family: "Nunito", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: var(--ink);
+  background: radial-gradient(1200px 600px at 10% 10%, var(--bg2), var(--bg1));
+  overflow-x: hidden;
+}
+
+.bg-glow{
+  position: fixed;
+  inset: -50px;
+  background:
+    radial-gradient(700px 400px at 80% 20%, rgba(255, 122, 168, 0.12), transparent 60%),
+    radial-gradient(700px 400px at 20% 80%, rgba(255, 183, 201, 0.14), transparent 60%),
+    radial-gradient(900px 520px at 50% 50%, rgba(191, 234, 223, 0.10), transparent 70%);
+  z-index: -1;
+  filter: blur(0px);
+}
+
+.brand-title{
+  font-family: "Fraunces", serif;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+
+.brand-subtitle{ color: var(--muted); }
+
+.page-title{
+  font-family: "Fraunces", serif;
+  font-weight: 700;
+}
+
+.tiny-heart{
+  color: var(--accent);
+  margin-left: 2px;
+}
+
+.btn-soft{
+  border-radius: 999px;
+  border: 1px solid var(--stroke);
+  background: #ffffffb5;
+  box-shadow: 0 8px 20px rgba(20,10,5,0.06);
+}
+.btn-soft:hover{ background: #fff; }
+
+/* Scorecards */
+.scorecard{
+  background: var(--card);
+  border: 1px solid var(--stroke);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: transform .15s ease, box-shadow .15s ease;
+  position: relative;
+  overflow: hidden;
+}
+.scorecard::after{
+  content:"";
+  position:absolute;
+  inset:-40px -40px auto auto;
+  width: 170px;
+  height: 170px;
+  background: radial-gradient(circle at 30% 30%, rgba(255,122,168,.20), transparent 60%);
+  transform: rotate(15deg);
+}
+.scorecard:hover{
+  transform: translateY(-3px);
+  box-shadow: var(--shadow2);
+}
+.score-badge{
+  width: 44px; height: 44px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #fff, #fff0f5);
+  border: 1px solid var(--stroke);
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+  color: #d45b85;
+  margin-bottom: 14px;
+}
+.score-title{
+  font-family: "Fraunces", serif;
+  font-weight: 700;
+  margin: 0 0 6px 0;
+}
+.score-desc{ color: var(--muted); }
+
+/* Cute tiny hearts */
+.mini-hearts{
+  height: 18px;
+  margin-bottom: 10px;
+  opacity: 0.9;
+  background:
+    radial-gradient(circle at 12px 9px, rgba(255,122,168,.65) 0 2px, transparent 3px),
+    radial-gradient(circle at 26px 9px, rgba(255,183,201,.75) 0 2px, transparent 3px),
+    radial-gradient(circle at 40px 9px, rgba(191,234,223,.7) 0 2px, transparent 3px),
+    radial-gradient(circle at 54px 9px, rgba(255,122,168,.55) 0 2px, transparent 3px);
+  border-radius: 999px;
+}
+.mini-hearts--paper{ opacity: 0.75; }
+
+/* Letter page "paper" */
+.love-paper{
+  max-width: 860px;
+  background: linear-gradient(180deg, var(--paper), #ffffff);
+  border: 1px solid var(--stroke);
+  border-radius: 26px;
+  box-shadow: var(--shadow2);
+  overflow: hidden;
+}
+.love-paper-top{
+  padding: 28px 28px 14px;
+  border-bottom: 1px dashed rgba(241,215,208,0.9);
+  background: radial-gradient(600px 260px at 20% 0%, rgba(255,122,168,0.10), transparent 60%);
+}
+.love-paper-heading{
+  font-family: "Fraunces", serif;
+  font-weight: 700;
+  margin: 0 0 6px 0;
+}
+.love-paper-sub{ color: var(--muted); margin: 0; }
+.love-paper-body{
+  padding: 26px 28px 30px;
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+.signature{
+  font-family: "Fraunces", serif;
+  font-weight: 700;
+  color: #c64c77;
+}
+
+/* Polaroids */
+.polaroid{
+  width: 100%;
+  border: 0;
+  text-align: left;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+}
+.polaroid > img{
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+}
+.polaroid{
+  background: #fff;
+  border: 1px solid var(--stroke);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+  padding: 14px 14px 18px;
+  transition: transform .14s ease, box-shadow .14s ease;
+}
+.polaroid:hover{
+  transform: translateY(-2px) rotate(-0.3deg);
+  box-shadow: var(--shadow2);
+}
+.polaroid-caption{
+  padding-top: 12px;
+  font-family: "Fraunces", serif;
+  font-weight: 700;
+  color: #4a3f3c;
+}
+.polaroid--tilt{ transform: rotate(-1deg); }
+.polaroid--tilt2{ transform: rotate(1deg); }
+
+.modal-soft{
+  border-radius: 22px;
+  border: 1px solid var(--stroke);
+  box-shadow: var(--shadow2);
+  background: #fffdfc;
+}
+.modal-img{
+  width: 100%;
+  max-height: 420px;
+  object-fit: contain;
+  border-radius: 14px;
+  border: 1px solid rgba(241,215,208,0.8);
+  background: #fff;
+}
+.modal-caption{
+  margin-top: 10px;
+  font-family: "Fraunces", serif;
+  font-weight: 700;
+  color: #4a3f3c;
+}
+
+/* Stickies */
+.sticky-grid{
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 16px;
+}
+@media (min-width: 576px){
+  .sticky-grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (min-width: 992px){
+  .sticky-grid{ grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+.sticky{
+  position: relative;
+  background: #fff7c9;
+  border: 1px solid rgba(240, 210, 120, 0.7);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+  padding: 18px 18px 20px;
+  min-height: 170px;
+}
+.sticky--mint{
+  background: #d7f6ee;
+  border-color: rgba(140, 210, 190, 0.65);
+}
+.sticky--rose{
+  background: #ffe1ea;
+  border-color: rgba(255, 160, 190, 0.55);
+}
+.sticky-tape{
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-2deg);
+  width: 120px;
+  height: 26px;
+  background: var(--tape);
+  border: 1px solid rgba(241,215,208,0.9);
+  border-radius: 10px;
+  box-shadow: 0 6px 14px rgba(20,10,5,0.05);
+}
+.sticky-title{
+  font-family: "Fraunces", serif;
+  font-weight: 700;
+  margin: 10px 0 6px;
+}
+.sticky-text{ color: #3b3533; margin: 0; }
+
+/* Locked section */
+.lock-card{
+  max-width: 860px;
+  background: var(--card);
+  border: 1px solid var(--stroke);
+  border-radius: 26px;
+  box-shadow: var(--shadow2);
+  overflow: hidden;
+}
+.lock-top{
+  padding: 26px 26px 18px;
+  background: radial-gradient(650px 260px at 80% 0%, rgba(191,234,223,0.16), transparent 60%),
+              radial-gradient(650px 260px at 20% 0%, rgba(255,122,168,0.10), transparent 60%);
+  border-bottom: 1px dashed rgba(241,215,208,0.9);
+}
+.lock-icon{ font-size: 40px; }
+.lock-title{
+  font-family: "Fraunces", serif;
+  font-weight: 700;
+}
+.lock-body{ padding: 22px 26px 28px; }
+
+.form-control-soft{
+  border-radius: 14px;
+  border: 1px solid var(--stroke);
+  background: #fff;
+}
+
+.soft-hr{ border-color: rgba(241,215,208,0.9); }
+
+.tap-heart{
+  width: 92px;
+  height: 92px;
+  border-radius: 999px;
+  border: 1px solid var(--stroke);
+  background: #fff;
+  box-shadow: var(--shadow);
+  display: inline-grid;
+  place-items: center;
+  transition: transform .08s ease;
+}
+.tap-heart:active{ transform: scale(0.98); }
+.tap-heart-inner{
+  font-size: 34px;
+  color: var(--accent);
+  font-weight: 800;
+  line-height: 1;
+}
+
+.unlock-msg{
+  margin-top: 14px;
+  text-align: center;
+  font-weight: 700;
+  color: #c64c77;
+  min-height: 24px;
+}
+
+.secret-area{
+  max-width: 860px;
+  margin-top: 18px;
+  background: linear-gradient(180deg, #fff, #fff7fb);
+  border: 1px solid var(--stroke);
+  border-radius: 26px;
+  box-shadow: var(--shadow2);
+  padding: 22px 24px 26px;
+}
+.secret-badge{
+  display: inline-block;
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,160,190,0.6);
+  background: rgba(255, 225, 234, 0.8);
+  font-weight: 800;
+  color: #b83c67;
+  margin-bottom: 10px;
+}
+.secret-title{
+  font-family: "Fraunces", serif;
+  font-weight: 700;
+}
+
+/* Floating hearts (sprinkle) */
+.float-heart{
+  position: fixed;
+  left: 0; top: 0;
+  font-size: 18px;
+  pointer-events: none;
+  user-select: none;
+  opacity: 0.9;
+  filter: drop-shadow(0 6px 10px rgba(20,10,5,0.12));
+  animation: floatUp 1.7s ease-in forwards;
+  z-index: 9999;
+}
+@keyframes floatUp{
+  0%   { transform: translate(0,0) scale(1); opacity: .9; }
+  100% { transform: translate(var(--dx), -160px) scale(1.25); opacity: 0; }
+}
